@@ -11,7 +11,7 @@ import io.hanhi.accounts.AccountHandler;
 @SuppressWarnings("serial")
 public class SignIn extends HttpServlet {
 	public static String URL = "https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=";
-	public static String CLIENT_ID = "828388414959-1mm04auqa1vp61htumq8saf861crs9bj.apps.googleusercontent.com";
+	public static String CLIENT_ID = "lol no";
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		resp.setContentType("text/plain");
