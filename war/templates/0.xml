@@ -1,0 +1,52 @@
+<template>
+	<title>Smart Negative</title>
+	<thumbnail>images/negative.PNG</thumbnail>
+	<htmlHead><![CDATA[<script src="javascript/three.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script><title>titleName</title>]]></htmlHead>
+	<htmlBody><![CDATA[<script id="vertexShader" type="x-shader/x-vertex">varying vec2 vUv;void main()	{vUv = uv;gl_Position = vec4(position, 1.0);}</script><script id="fragmentShader" type="x-shader/x-fragment">uniform sampler2D texture1;varying vec2 vUv;void main(){vec4 tex=texture2D(texture1,vUv);float average=(tex.r+tex.g+tex.b)/3.0;vec4 newest=vec4(average-(tex.r-average),average-(tex.g-average),average-(tex.b-average),1);gl_FragColor=newest;}</script>]]></htmlBody>
+	<javascript><![CDATA[var image = document.createElement("img");
+image.src = "/mirror?url=imageURL";
+$(image).load(function() {
+    //Resize the body
+    $(document.body).css("width", image.width);
+    $(document.body).css("height", image.height);
+    
+    //Three.js init
+    var scene = new THREE.Scene();
+    var camera = new THREE.Camera();
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize(image.width, image.height);
+    document.body.appendChild(renderer.domElement);
+    camera.position.z = 1;
+
+    //Creates the image	
+    var geometry = new THREE.PlaneBufferGeometry(2, 2);
+    var texLoader = new THREE.TextureLoader();
+    texLoader.load(
+        image.src,
+        function(event) {
+            var uniforms = {
+                texture1: {type: "t", value: event}
+            }
+            var material = new THREE.ShaderMaterial({
+                uniforms: uniforms,
+                vertexShader: document.getElementById("vertexShader").textContent,
+                fragmentShader: document.getElementById("fragmentShader").textContent
+            });
+            var image = new THREE.Mesh(geometry, material);
+            scene.add(image);
+            renderer.render(scene, camera);
+        }
+    );
+});]]></javascript>
+	<css>body { margin: 0px;}</css>
+	<tag>
+		<name>titleName</name>
+		<header>Page Title</header>
+		<value>Smart Negative</value>
+	</tag>
+	<tag>
+		<name>imageURL</name>
+		<header>Image URL</header>
+		<value>https://s31.postimg.org/4qlsmlnob/monalisa.jpg</value>
+	</tag>
+</template>

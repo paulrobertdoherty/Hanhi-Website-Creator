@@ -1,0 +1,78 @@
+<template>
+	<title>Slideshow</title>
+	<thumbnail>images/slideshowThumb.png</thumbnail>
+	<htmlHead><Data><![CDATA[<title>titleName</title> <link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet"> <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script> <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">]]></Data></htmlHead>
+	<htmlBody><![CDATA[<div class="container" style="text-align: center"> <h1>titleName</h1> <p>titleCaption</p></div><div class="container-fluid" style="background-image: url('image1')"> <h2>caption1</h2> </div><div class="container-fluid" style="background-image: url('image2')"> <h2>caption2</h2> </div><div class="container-fluid" style="background-image: url('image3')"> <h2>caption3</h2> </div><div class="container-fluid" style="background-image: url('image4')"> <h2>caption4</h2> </div><div class="container-fluid" style="background-image: url('image5')"> <h2>caption5</h2> </div><div class="container-fluid" style="background-image: url('image6')"> <h2>caption6</h2> </div>]]></htmlBody>
+	<javascript>$(".container-fluid").hover(function(){$(this).find("h2").animate({opacity: 1});}, function(){$(this).find("h2").animate({opacity: 0});});</javascript>
+	<css><![CDATA[h2{opacity: 0;}.container-fluid{padding: 0px; margin: 0px; height: 100%; background-position: center; background-repeat: no-repeat; text-align: center;}img{max-width: none; max-height: none; width: 100%;}]]></css>
+	<tag>
+		<name>titleName</name>
+		<header>Title</header>
+		<value>Slideshow</value>
+	</tag>
+	<tag>
+		<name>titleCaption</name>
+		<header>Title Caption</header>
+		<value>A slideshow of public domain images</value>
+	</tag>
+	<tag>
+		<name>image1</name>
+		<header>Image URL 1</header>
+		<value>https://s32.postimg.org/9hayahnv9/italian_landscape_mountains_nature.jpg</value>
+	</tag>
+	<tag>
+		<name>caption1</name>
+		<header>Caption for Image 1</header>
+		<value>Italian Mountains</value>
+	</tag>
+	<tag>
+		<name>image2</name>
+		<header>Image URL 2</header>
+		<value>https://s31.postimg.org/ex5g85n6z/bokeh.jpg</value>
+	</tag>
+	<tag>
+		<name>caption2</name>
+		<header>Caption for Image 2</header>
+		<value>Bokeh</value>
+	</tag>
+	<tag>
+		<name>image3</name>
+		<header>Image URL 3</header>
+		<value>https://s32.postimg.org/mrblsy3o5/palm_trees.jpg</value>
+	</tag>
+	<tag>
+		<name>caption3</name>
+		<header>Caption for Image 3</header>
+		<value>Palm Trees</value>
+	</tag>
+	<tag>
+		<name>image4</name>
+		<header>Image URL 4</header>
+		<value>https://s31.postimg.org/3uan57qzv/tulips.jpg</value>
+	</tag>
+	<tag>
+		<name>caption4</name>
+		<header>Caption for Image 4</header>
+		<value>Tulips</value>
+	</tag>
+	<tag>
+		<name>image5</name>
+		<header>Image URL 5</header>
+		<value>https://s31.postimg.org/7i8baqm17/beach.jpg</value>
+	</tag>
+	<tag>
+		<name>caption5</name>
+		<header>Caption for Image 5</header>
+		<value>A Beach</value>
+	</tag>
+	<tag>
+		<name>image6</name>
+		<header>Image URL 6</header>
+		<value>https://s31.postimg.org/rgfwoekp7/clouds.jpg</value>
+	</tag>
+	<tag>
+		<name>caption6</name>
+		<header>Caption for Image 6</header>
+		<value>Clouds</value>
+	</tag>
+</template>

@@ -1,0 +1,23 @@
+<template>
+	<title>Image Captioning</title>
+	<thumbnail>https://s32.postimg.org/usqdkyh7p/capture.png</thumbnail>
+	<htmlHead><Data><![CDATA[<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script><script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script><link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet"><title>titleContent</title>]]></Data></htmlHead>
+	<htmlBody><Data><![CDATA[<div class="container"><div class="thumbnail"><img src="imageURL"><div class="caption"><p>captionContent</p></div></div></div>]]></Data></htmlBody>
+	<javascript></javascript>
+	<css>.container {text-align: center;}</css>
+	<tag>
+		<name>titleContent</name>
+		<header>Page Title</header>
+		<value>Image Captioning</value>
+	</tag>
+	<tag>
+		<name>imageURL</name>
+		<header>URL of Image</header>
+		<value>https://s31.postimg.org/4qlsmlnob/monalisa.jpg</value>
+	</tag>
+	<tag>
+		<name>captionContent</name>
+		<header>Caption</header>
+		<value>The Mona Lisa by Leonardo da Vinci</value>
+	</tag>
+</template>
